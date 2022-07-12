@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                         itemListAdapter.submitList(getItemsList())
                     } else {
                         itemListAdapter.submitList(filterItems(filter))
-                        getItemsList()
                     }
                 }
             }
