@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/min_background"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_18dp"
+        android:layout_marginTop="@dimen/dimen_24dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/filter_item" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dimen_24dp"
+        android:layout_marginTop="@dimen/dimen_32dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/ivBottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvFilters"
+        app:spanCount="2"
+        tools:listitem="@layout/list_item" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/glBottomNavTop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/bottom_navigation" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glBottomNavTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.885"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glBottomNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ivBottomHeart"
+        android:layout_width="wrap_content"
+        android:background="@drawable/ic_nav_heart"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/glBottomNav"
+        app:layout_constraintEnd_toStartOf="@id/ivBottomHome"
+        app:layout_constraintStart_toStartOf="@+id/ivBottomNavigation"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ivBottomHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/glBottomNav"
+        app:layout_constraintEnd_toStartOf="@id/ivBottomMsg"
+        app:layout_constraintStart_toEndOf="@+id/ivBottomHeart"
+        android:background="@drawable/ic_nav_home" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ivBottomMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/glBottomNav"
+        app:layout_constraintEnd_toStartOf="@id/ivBottomBell"
+        app:layout_constraintStart_toEndOf="@+id/ivBottomHome"
+        android:background="@drawable/ic_nav_msg" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ivBottomBell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/glBottomNav"
+        app:layout_constraintEnd_toStartOf="@id/ivBottomStar"
+        app:layout_constraintStart_toEndOf="@+id/ivBottomMsg"
+        android:background="@drawable/ic_nav_bell" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ivBottomStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/glBottomNav"
+        app:layout_constraintEnd_toEndOf="@+id/ivBottomNavigation"
+        app:layout_constraintStart_toEndOf="@+id/ivBottomBell"
+        android:background="@drawable/ic_nav_star" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
